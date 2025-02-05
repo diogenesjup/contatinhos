@@ -11,15 +11,12 @@ class App {
         this.sessao  = new Sessao();
         this.models  = new Models();
         this.helpers = new Helpers();
-
-   
-
         
         if(ambiente=="HOMOLOGACAO"){
              
-            this.urlDom = "https://servidorseguro.cloud/desenrascarpt/app/www/";
-            this.urlApi = "https://servidorseguro.cloud/desenrascarpt/apiservicekeys/";
-            this.urlCdn = "https://servidorseguro.cloud/desenrascarpt/cdn/";
+            this.urlDom = "https://servidorseguro.cloud/contatinhos/app/www/";
+            this.urlApi = "https://servidorseguro.cloud/contatinhos/apiservicekeys/";
+            this.urlCdn = "https://servidorseguro.cloud/contatinhos/cdn/";
 
         }
         if(ambiente=="PRODUCAO"){
@@ -30,7 +27,7 @@ class App {
 
         }
 
-        this.urlApiPagto = "https://servidorseguro.cloud/desenrascarpt/";
+        this.urlApiPagto = "https://servidorseguro.cloud/contatinhos/";
 
         this.token = token;
         this.tokenSms = tokenSms;

@@ -1,5 +1,5 @@
 var app = new App(1, 
-				 "Desenrascar PT", 
+				 "Contatinhos", 
 				 "1.0.0", 
 				 "HIBRIDO",
 				 "HOMOLOGACAO",

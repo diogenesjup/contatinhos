@@ -3,19 +3,19 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.desenrascar.desenrascarpt"
+        id        = "com.contatinhos.contatinhosbr"
         version   = "1.0.0">
 
         <!-- LEMBRAR DE MUDAR O APP ID ANTES DE SUBIR O APP NAS LOJAS -->
 
-    <name>Desenrascar PT</name>
+    <name>Contatinhos</name>
 
     <description>
-        Desenrascar PT - Contrate profissionais qualificados perto de você
+        Contatinhos - Contrate profissionais qualificados perto de você
     </description>
 
-    <author href="https://servidorseguro.cloud/desenrascarpt/" email="diogenesjunior.ti@gmail.com">
-        Desenrascar PT
+    <author href="https://servidorseguro.cloud/contatinhos/" email="diogenesjunior.ti@gmail.com">
+        Contatinhos
     </author>
  
     <!--<engine name="android" spec="^13.0.0" />-->
@@ -32,14 +32,14 @@
     <preference name="exit-on-suspend" value="false" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="StatusBarBackgroundColor" value="#009247" />
+    <preference name="StatusBarBackgroundColor" value="#00A859" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreen" value="none" />
     <preference name="ShowSplashScreen" value="false" />
     <preference name="android-minSdkVersion" value="29" />
     <preference name="android-targetSdkVersion" value="34" />
     <preference name="AndroidXEnabled" value="true" />
-    <preference name="StatusBarBackgroundColor" value="#009247" />
+    <preference name="StatusBarBackgroundColor" value="#00A859" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     
 

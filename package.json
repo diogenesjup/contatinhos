@@ -1,24 +1,24 @@
 {
-  "name": "com.desenrascar.desenrascarpt",
+  "name": "com.contatinhos.contatinhosbr",
   "version": "1.0.0",
-  "description": "Desenrascar PT",
+  "description": "Contatinhos",
   "main": "index.html",
   "scripts": {
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/diogenesjup/desenrascarpt.git"
+    "url": "git+https://github.com/diogenesjup/contatinhos.git"
   },
   "keywords": [
-    "resolvaja"
+    "contatinhos"
   ],
-  "author": "Desenrascar PT Tecnologia",
+  "author": "Contatinhos Tecnologia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/diogenesjup/desenrascarpt/issues"
+    "url": "https://github.com/diogenesjup/contatinhos/issues"
   },
-  "homepage": "https://github.com/diogenesjup/desenrascarpt#readme",
+  "homepage": "https://github.com/diogenesjup/contatinhos#readme",
   "devDependencies": {
     "cordova-android": "^13.0.0"
   },
