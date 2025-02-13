@@ -453,6 +453,7 @@ section#content .view-3{
 .fechar-menu-cliente a img{
   width: 22px;
   height: auto;
+  filter: grayscale(1);
 }
 
 
@@ -860,7 +861,7 @@ section#content .view-3{
     border-bottom-right-radius: 0;
     font-size: 14px;
     padding-top: 0;
-    font-weight: 300;
+    font-weight: 400;
     border: none !important;
     background: #FAFAFA !important;
     padding-left: 20px;
@@ -907,6 +908,11 @@ section#content .view-3{
     border-bottom-right-radius: 10px;
 }
 
+.busca-principal.input-group > .form-control:not(:last-child)::placeholder,
+.busca-principal.input-group > .custom-select:not(:last-child)::placeholder {
+    color: #212121 !important;
+    opacity: 1; /* Garante que a cor será aplicada corretamente */
+}
 
 
 .view-dashboard nav{
@@ -2209,4 +2215,31 @@ p.apoio-servico{
 
 .filtro-categorias .slider.round:before {
   border-radius: 50%;
+}
+
+
+.nova-recepcao{
+
+}
+
+.nova-recepcao h3.saudacao{
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.view-inicial .nova-recepcao .form-check label{
+  padding: 16px;
+  padding-left: 28px;
+  padding-bottom: 20px;
+  min-height: 60px;
+  text-align: center;
+  background: #f7f7f7;
+  line-height: 20px;
+}
+
+.view-inicial .nova-recepcao .form-check input:checked + label{
+  background: #fff;
 }

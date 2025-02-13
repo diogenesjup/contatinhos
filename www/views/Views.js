@@ -23,10 +23,11 @@ class Views{
             this._content.html(`
             
                <div class="row view-inicial inicial" view-name="view-dashboard">
-                  <div class="col-12 wow fadeInUp" data-wow-delay="0.0s" data-wow-duration="0.3s">
+                  <div class="col-12 wow fadeInUp nova-recepcao" data-wow-delay="0.0s" data-wow-duration="0.3s">
                      
+                     <h3 class="saudacao">Seja bem vindo :)</h3> 
                      <h2>
-                      Qual tipo de perfil você deseja acessar?
+                      Qual tipo de perfil você deseja<br> acessar?
                      </h2>
 
                      <form method="post" action="javascript:void(0)" onsubmit="app.selecaoPerfil(event)">
@@ -34,18 +35,18 @@ class Views{
                            <div class="form-check">
                               <input class="form-check-input" type="radio" name="tipoPerfil" id="tipoServicoCliente" value="cliente" checked>
                               <label class="form-check-label" for="tipoServicoCliente">
-                                <span style="position: relative;display: block;float: left;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: -8px;text-align: center;">
-                                    <img src="assets/images/profile.svg" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Contratar Serviços" />
-                                </span> Encontrar profissionais
+                                <span style="position: absolute;display: block;float: none;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: 1px;text-align: center;left:10px;">
+                                    <img src="assets/images/cad59703-0e4d-486b-b442-07f50c45fc9f.png" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Sou CLIENTE" />
+                                </span> Sou <strong>CLIENTE,</strong><br> preciso de um serviço
                               </label>
                            </div>
 
                            <div class="form-check">
                               <input class="form-check-input" type="radio" name="tipoPerfil" id="tipoServicoPro" value="profissionais">
                               <label class="form-check-label" for="tipoServicoPro">
-                                <span style="position: relative;display: block;float: left;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: -8px;text-align: center;">
-                                 <img src="assets/images/simbolo.svg" alt="Cadastrar meus serviços" style="position: absolute;display: block;left: 0px;top: 0px;width: 96%;" />
-                                 </span>  Cadastrar meus serviços
+                                <span style="position: absolute;display: block;float: none;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: 1px;text-align: center;left:10px;">
+                                 <img src="assets/images/f1aa5bab-cd45-4371-9250-4821ddae42f7.png" alt="Sou PROFISSIONAL" style="position: absolute;display: block;left: 0px;top: 0px;width: 96%;" />
+                                 </span>  Sou <strong>PROFISSIONAL,</strong><br> quero cadastrar meus serviços.
                               </label>
                            </div>
                            
@@ -94,7 +95,7 @@ class Views{
                      
                       <!-- BUSCA PRINCIPAL -->
                      <div class="input-group busca-principal">
-                        <input type="text" class="form-control" onkeyup="app.filtrotabela();" id="filtroTabela" placeholder="Do que você está precisando hoje?" aria-label="Do que você está precisando hoje?" aria-describedby="busca-principal">
+                        <input type="text" class="form-control" onkeyup="app.filtrotabela();" id="filtroTabela" placeholder="Busque um serviço ou um profissional " aria-label="Busque um serviço ou um profissional " aria-describedby="busca-principal">
                         <div class="input-group-append">
                           <span class="input-group-text" id="busca-principal">
                             <img src="assets/images/search.svg" alt="Busca">
@@ -2075,7 +2076,7 @@ class Views{
 
                      <div class="form-group link-apoio text-center">
                             <a href="javascript:void(0)" title="Versão do Aplicativo" style="padding-top:20px;font-size:13px;">
-                               Versão 1.0.0
+                               Versão 1.2.0
                             </a>
                           </div>
                      
