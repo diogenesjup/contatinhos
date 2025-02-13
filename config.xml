@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.contatinhos.contatinhosbr"
-        version   = "1.2.2">
+        version   = "1.2.3">
 
         <!-- LEMBRAR DE MUDAR O APP ID ANTES DE SUBIR O APP NAS LOJAS -->
 
@@ -34,13 +34,17 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarBackgroundColor" value="#00A859" />
 
+    <!--
+    <preference name="splashscreen" value="splash" />
+    <preference name="splashScreenDelay" value="3000" /> 
+    <preference name="fadeSplashScreen" value="true" />
+    <preference name="fadeSplashScreenDuration" value="500" />
+    <preference name="autoHideSplashScreen" value="true" />
+    <preference name="showSplashScreenSpinner" value="false" />
+    -->
 
-    <preference name="SplashScreen" value="splash" />
-    <preference name="SplashScreenDelay" value="3000" /> <!-- Tempo em milissegundos (3 segundos) -->
-    <preference name="FadeSplashScreen" value="true" />
-    <preference name="FadeSplashScreenDuration" value="500" />
-    <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/assets/images/icones/1024x1024.png" />
+    <preference name="AndroidWindowSplashScreenBackground" value="#000" />
 
     <preference name="android-minSdkVersion" value="29" />
     <preference name="android-targetSdkVersion" value="34" />
@@ -61,7 +65,13 @@
     <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-statusbar" />
     <plugin name="cordova-plugin-ionic-webview" />
+
+    <!--
     <plugin name="cordova-plugin-splashscreen" />
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+    </feature>
+    -->
    
 
     <preference name="WKWebViewOnly" value="true" />
