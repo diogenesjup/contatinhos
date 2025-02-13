@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.contatinhos.contatinhosbr"
-        version   = "1.2.0">
+        version   = "1.2.2">
 
         <!-- LEMBRAR DE MUDAR O APP ID ANTES DE SUBIR O APP NAS LOJAS -->
 
@@ -35,7 +35,7 @@
     <preference name="StatusBarBackgroundColor" value="#00A859" />
 
 
-    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="3000" /> <!-- Tempo em milissegundos (3 segundos) -->
     <preference name="FadeSplashScreen" value="true" />
     <preference name="FadeSplashScreenDuration" value="500" />
