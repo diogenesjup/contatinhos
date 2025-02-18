@@ -607,7 +607,7 @@ enviarAtendimento(){
               console.log(JSON.parse(xhr.responseText));
               
               var dados = JSON.parse(xhr.responseText);
-              aviso("Deu certo!","Você receberá em breve orçamentos vindos dos nossos parceiros!");
+              aviso("Certinho! <small style='font-size:13px;display:block;'>Vamos conectar você ao profissional.</small>","Em BREVE, você estará RECEBENDO ORÇAMENTOS dos PROFISSIONAIS cadastrados na CONTATINHOS!");
               app.opcoesCarretamentoPerfilCliente();
 
             }else{

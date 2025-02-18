@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.contatinhos.contatinhosbr"
-        version   = "1.2.3">
+        version   = "1.2.4">
 
         <!-- LEMBRAR DE MUDAR O APP ID ANTES DE SUBIR O APP NAS LOJAS -->
 
@@ -43,8 +43,8 @@
     <preference name="showSplashScreenSpinner" value="false" />
     -->
 
-    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/assets/images/icones/1024x1024.png" />
-    <preference name="AndroidWindowSplashScreenBackground" value="#000" />
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/assets/images/icones/splash.png" />
+    <preference name="AndroidWindowSplashScreenBackground" value="#fff" />
 
     <preference name="android-minSdkVersion" value="29" />
     <preference name="android-targetSdkVersion" value="34" />

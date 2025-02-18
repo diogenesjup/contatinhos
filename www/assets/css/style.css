@@ -95,12 +95,13 @@ label{
     font-family: 'Barlow', sans-serif;
     font-weight: normal;
     height: 45px;
-    padding-top: 2px;
+    padding-top: 5px;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     background: #00A859 !important;
     border-color: #00A859 !important;
+    font-size: 13px;
 }
 
 .btn-default,
@@ -113,8 +114,9 @@ label{
     font-family: 'Barlow', sans-serif;
     font-weight: normal;
     height: 45px;
-    padding-top: 2px;
+    padding-top: 10px !important;
     border-color: #ccc !important;
+    font-size: 13px;
 }
 
 .link-apoio a{
