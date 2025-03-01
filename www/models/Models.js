@@ -403,6 +403,14 @@ class Models{
                     $("#editarPerfilNome").val(dados.nome);
                     $("#editarPerfilEmail").val(dados.dados[0].user_email);
                     $("#editarPerfilCelular").val(dados.celular);
+
+                    if(dados.imagem_perfil!="" && dados.imagem_perfil!="N/A"){
+                      
+                       localStorage.setItem("fotoPerfil",dados.imagem_perfil);
+                       $("#fotoDePerfilAtualPre").css("background","url('"+dados.imagem_perfil+"') no-repeat center center");
+                       $("#fotoDePerfilAtualPre").css("background-size","cover");
+
+                    }
                     
                     // CARREGAR MASCARAS
                     app.helpers.carregarMascaras();
@@ -432,50 +440,84 @@ class Models{
     
     
     procEditarPerfil(){
+
+        aviso("Processando...","Aguarde, estamos enviando suas informações");
         
         $("#btnEditar").html("Processando...");
         $(".form-control").attr("readonly","true");
 
-        // CAPTURAR OS DADOS DO FORMULÁRIO
-        var dados = $('#formEditarPerfil').formSerialize();
-        var idUsuario = localStorage.getItem("idUsuario");
-       
-        // CONFIGURAÇÕES AJAX VANILLA
-        let xhr = new XMLHttpRequest();
-         
-        xhr.open('POST', app.urlApi+'proc-editar-perfil',true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        const fileInput    = document.getElementById("foto_destaque");
+        const file         = fileInput.files[0];
+        var   imagemPerfil = "N/A";
 
-        var params = 'idUsuario='+idUsuario+
-                     "&token="+app.token+
-                     "&"+dados;
+        if (file) {
+
+              const reader = new FileReader();
         
-        // INICIO AJAX VANILLA
-        xhr.onreadystatechange = () => {
+              // Converte a imagem em base64 para envio ao servidor
+              reader.onloadend = function () {
 
-          if(xhr.readyState == 4) {
+                  const base64Image = reader.result;
+                  imagemPerfil      = base64Image;
 
-            if(xhr.status == 200) {
+                  jQuery("#foto_perfil_base64").val(imagemPerfil);
+                 
+                 
+              };
+        
+              reader.readAsDataURL(file); // Converte a imagem em base64
+        }
 
-              console.log("OPERAÇÃO REALIZADA COM SUCESSO");
-              console.log(JSON.parse(xhr.responseText));
-              aviso("Deu certo!","As informações foram atualizadas.");
+      
+        // ESPERAR 10 SEGUNDOS
+        setTimeout(function(){
 
-            }else{
-              
-              console.log("SEM SUCESSO procEditarPerfil()");
-              console.log(JSON.parse(xhr.responseText));
+                          // CAPTURAR OS DADOS DO FORMULÁRIO
+                          var dados     = $('#formEditarPerfil').formSerialize();
+                          var idUsuario = localStorage.getItem("idUsuario");
+                        
+                          // CONFIGURAÇÕES AJAX VANILLA
+                          let xhr = new XMLHttpRequest();
+                          
+                          xhr.open('POST', app.urlApi+'proc-editar-perfil',true);
+                          xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-            }
+                          var params = 'idUsuario='+idUsuario+
+                                      "&token="+app.token+
+                                      "&"+dados;
+                          
+                          // INICIO AJAX VANILLA
+                          xhr.onreadystatechange = () => {
 
-          }
-      }; // FINAL AJAX VANILLA
+                            if(xhr.readyState == 4) {
 
-      /* EXECUTA */
-      xhr.send(params);
+                              if(xhr.status == 200) {
 
-      $("#btnEditar").html("Atualizar");
-      $(".form-control").removeAttr("readonly");
+                                
+
+                                console.log("OPERAÇÃO REALIZADA COM SUCESSO");
+                                console.log(JSON.parse(xhr.responseText));
+                                aviso("Deu certo!","As informações foram atualizadas.");
+
+                              }else{
+
+                                fecharAviso();
+                                
+                                console.log("SEM SUCESSO procEditarPerfil()");
+                                console.log(JSON.parse(xhr.responseText));
+
+                              }
+
+                            }
+                        }; // FINAL AJAX VANILLA
+
+                        /* EXECUTA */
+                        xhr.send(params);
+
+                        $("#btnEditar").html("Atualizar");
+                        $(".form-control").removeAttr("readonly");
+
+        },5000); // FIM 10 SEGUUNDOS
 
 
     }
@@ -691,7 +733,7 @@ orcamentosDisponiveis(){
                                      <div class="header-autor">
 
                                          <h3>
-                                            <img src="assets/images/perfil.png" style="opacity:0.5;border-radius: 100%;" alt="Foto Perfil" />
+                                            <img src="${n.imagem_perfil}" style="opacity:1;border-radius: 100%;" alt="Foto Perfil" />
                                             ${n.nome_do_cliente}
                                             <small>
                                                <p>
@@ -800,7 +842,7 @@ orcamentosDisponiveisDesbloqueados(){
                                      <div class="header-autor">
 
                                          <h3>
-                                            <img src="assets/images/perfil.png" style="opacity:0.5;border-radius: 100%;" alt="Foto Perfil" />
+                                            <img src="${n.imagem_perfil}" style="opacity:1;border-radius: 100%;" alt="Foto Perfil" />
                                             ${n.nome_do_cliente}
                                             <small>
                                                <p>
@@ -921,6 +963,10 @@ carregarDetalheAtendimento(idAnuncio,acao){
 
               $("#actionLigacao").attr("href",`tel:${celularLimpo}`);
               $("#actionWhatsApp").attr("href",`https://api.whatsapp.com/send?l=pt_BR&phone=55${celularLimpo}`);
+
+              if(dados.orcamentos[0].imagem_perfil){
+                 $(".header-autor h3 img").attr("src",dados.orcamentos[0].imagem_perfil);
+              }
 
             }else{
               

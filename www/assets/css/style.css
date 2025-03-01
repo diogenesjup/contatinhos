@@ -533,6 +533,7 @@ section#content .view-3{
 .fechar-menu-profissional a img{
   width: 22px;
   height: auto;
+  filter: grayscale(1);
 }
 
 
@@ -2244,4 +2245,82 @@ p.apoio-servico{
 
 .view-inicial .nova-recepcao .form-check input:checked + label{
   background: #fff;
+}
+
+
+.foto-de-perfil-atual{
+      position: relative;
+      display: block;
+      width: 130px;
+      height: 130px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+      margin-bottom: 20px;
+      background: #f2f2f2;  
+}
+
+.foto-de-perfil-atual small{
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 150px;
+  left: 50%;
+  margin-left: -75px;
+  background: rgba(000, 000, 000, 0.60);
+  color: #fff;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  font-size: 11px;
+}
+
+
+
+.selecao-pre-upload{
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.selecao-pre-upload label{
+  cursor: pointer;
+    position: relative;
+    display: block;
+    border: 2px dotted #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 120px;
+    background: #f9f9f9;
+}
+
+.selecao-pre-upload label img{
+  display: block;
+  opacity: 0.25;
+  width: 32px;
+  height: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-top: 4px;
+}
+
+.selecao-pre-upload input{
+  display: none;
+}
+
+#previewContainerId{
+
+}
+
+#previewContainerId img{
+  width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 16px;
 }

@@ -25,18 +25,15 @@ class Views{
                <div class="row view-inicial inicial" view-name="view-dashboard">
                   <div class="col-12 wow fadeInUp nova-recepcao" data-wow-delay="0.0s" data-wow-duration="0.3s">
                      
-                     <h3 class="saudacao">Seja bem vindo :)</h3> 
-                     <h2>
-                      Qual tipo de perfil você deseja<br> acessar?
-                     </h2>
-
+                     <h3 class="saudacao">Seja bem vindo, qual tipo de perfil você deseja acessar?</h3> 
+                     
                      <form method="post" action="javascript:void(0)" onsubmit="app.selecaoPerfil(event)">
 
                            <div class="form-check">
                               <input class="form-check-input" type="radio" name="tipoPerfil" id="tipoServicoCliente" value="cliente" checked>
                               <label class="form-check-label" for="tipoServicoCliente">
                                 <span style="position: absolute;display: block;float: none;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: 1px;text-align: center;left:10px;">
-                                    <img src="assets/images/cad59703-0e4d-486b-b442-07f50c45fc9f.png" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Sou CLIENTE" />
+                                    <img src="assets/images/f1aa5bab-cd45-4371-9250-4821ddae42f7.png" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Sou CLIENTE" />
                                 </span> Sou <strong>CLIENTE,</strong><br> preciso de um serviço
                               </label>
                            </div>
@@ -45,8 +42,17 @@ class Views{
                               <input class="form-check-input" type="radio" name="tipoPerfil" id="tipoServicoPro" value="profissionais">
                               <label class="form-check-label" for="tipoServicoPro">
                                 <span style="position: absolute;display: block;float: none;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: 1px;text-align: center;left:10px;">
-                                 <img src="assets/images/f1aa5bab-cd45-4371-9250-4821ddae42f7.png" alt="Sou PROFISSIONAL" style="position: absolute;display: block;left: 0px;top: 0px;width: 96%;" />
+                                 <img src="assets/images/cad59703-0e4d-486b-b442-07f50c45fc9f.png" alt="Sou PROFISSIONAL" style="position: absolute;display: block;left: 0px;top: 0px;width: 96%;" />
                                  </span>  Sou <strong>PROFISSIONAL,</strong><br> quero cadastrar meus serviços.
+                              </label>
+                           </div>
+
+                           <div class="form-check">
+                              <input class="form-check-input" type="radio" name="tipoPerfil" id="tipoServicoClienteEmpresa" value="cliente">
+                              <label class="form-check-label" for="tipoServicoClienteEmpresa">
+                                <span style="position: absolute;display: block;float: none;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: 1px;text-align: center;left:10px;">
+                                    <img src="assets/images/EMPRESA.png" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Sou CLIENTE" />
+                                </span> Como <strong>EMPRESA,</strong><br> preciso de um profissional
                               </label>
                            </div>
                            
@@ -445,7 +451,7 @@ class Views{
 
                  <a class="saldo-atual" href="javascript:void(0)" onclick="app.resumoSaldoProfissional()" title="Seu saldo">
                     
-                    <img src="assets/images/saldo.svg" alt="Seu saldo atual" /> <span id="saldoAtualUsuarioHeader">${localStorage.getItem("saldoPrestadorServico")}</span>
+                    <img src="assets/images/simbolo.svg" alt="Seu saldo atual" /> <span id="saldoAtualUsuarioHeader">${localStorage.getItem("saldoPrestadorServico")}</span>
 
                  </a>
                  
@@ -501,7 +507,7 @@ class Views{
 
                  <a class="saldo-atual" href="javascript:void(0)" onclick="app.resumoSaldoProfissional()" title="Seu saldo">
                     
-                    <img src="assets/images/saldo.svg" alt="Seu saldo atual" /> <span id="saldoAtualUsuarioHeader">${localStorage.getItem("saldoPrestadorServico")}</span>
+                    <img src="assets/images/simbolo.svg" alt="Seu saldo atual" /> <span id="saldoAtualUsuarioHeader">${localStorage.getItem("saldoPrestadorServico")}</span>
 
                  </a>
                  
@@ -556,7 +562,7 @@ class Views{
                   <div class="col-12 wow fadeInUp" data-wow-delay="0.0s" data-wow-duration="0.3s">
                      
                      <h2>
-                       Esse é o seu saldo atual: <img src="assets/images/saldo.svg" style="width:16px;margin-top:-3px;" /> ${localStorage.getItem("saldoPrestadorServico")}
+                       Esse é o seu saldo atual: <img src="assets/images/simbolo.svg" style="width:16px;margin-top:-3px;" /> ${localStorage.getItem("saldoPrestadorServico")}
                      </h2>
                      
                      <p style="font-size: 13px;width:80%;margin-bottom:30px;">
@@ -611,7 +617,7 @@ class Views{
                             
                             <div class="area-formulario">
 
-                                    <h3>Editar seus dados</h3>
+                                    <h3 style="font-weight: bold;font-size: 20px;margin-bottom: 16px;">Editar seus dados</h3>
 
                                     <div class="placeholder">
 
@@ -643,11 +649,22 @@ class Views{
                                     </div>
 
                                     <div class="form">
+
+                                          <div 
+                                             class="foto-de-perfil-atual" 
+                                             id="fotoDePerfilAtualPre"
+                                             style="background:url('assets/images/default916955d994a3b0c76e1ea87bd0d124a7.jpg') no-repeat center center;background-size:cover;"
+                                          >
+                                             &nbsp;
+                                             <small>Sua foto de perfil</small>
+                                          </div>
                                          
                                          <form id="formEditarPerfil" method="post" action="javascript:void(0)" onsubmit="app.procEditarPerfil(event)">
 
                                             <input type="hidden" name="editarPerfilIdUsuario" value="${localStorage.getItem("idUsuario")}" />
-                                            
+                                            <input type="hidden" name="foto_perfil_base64" id="foto_perfil_base64" value="N/A" />
+
+
                                             <div class="form-group">
                                                <label>Nome</label>
                                                <input type="text" class="form-control" name="editarPerfilNome" id="editarPerfilNome" placeholder="Seu nome" required />
@@ -668,11 +685,37 @@ class Views{
                                                <input type="password" class="form-control" name="editarPerfilSenha" id="editarPerfilSenha" placeholder="Senha de acesso" />
                                             </div>
 
+                                             <!-- FOTO DE PERFIL -->
+                                             <div class="form-group selecao-pre-upload">
+                                                   <label for="foto_destaque">
+                                                      <img src="assets/images/8664927_image_photo_icon.svg" />
+                                                      Selecione uma imagem para usar como foto de perfil
+                                                   </label>
+                                                   <input 
+                                                      type="file" 
+                                                      class="form-control" 
+                                                      name="foto_destaque" 
+                                                      id="foto_destaque" 
+                                                      accept="image/*"
+                                                      onchange="previewImagem()" 
+                                                      required 
+                                                   />
+                                             </div>
+
+                                             <div id="previewContainerId">
+                                                 &nbsp;     
+                                             </div>
+                                             <!-- FOTO DE PERFIL -->
+
+
                                             <div class="form-group">
                                                <button type="submit" class="btn btn-primary" id="btnEditar">Atualizar</button>
                                             </div>
 
                                          </form>
+
+                                         <p>&nbsp;</p>
+                                         <p>&nbsp;</p>
 
                                     </div>
 
@@ -708,7 +751,9 @@ class Views{
                          <img src="assets/images/voltar-views.svg" alt="Voltar" />
                       </a> 
                       Comprar MOEDAS</h2>
-                     <p>Pacote de MOEDAS para você desbloquear anúncios dentro da plataforma</p>
+                     <p>
+                        Escolha um pacote de moedas para você desbloquear e visualizar os serviços. Clique no botão abaixo dos pacotes, para comprar.
+                     </p>
 
                      
                      <form id="formPacoteSelecao" method="post" action="javascript:void(0)" onsubmit="app.selecaoPacoteCompra(event)">
@@ -770,7 +815,7 @@ class Views{
 
                            <h3 style="font-size:20px;">Como deseja realizar o pagamento?</h3>
                            <p>
-                             Você pode realizar o pagamento através de cartão de crédito através de PIX.
+                              Você pode realizar o pagamento de duas formas: <strong>Pix - Mais Rápido - Moedas caem em minutos.</strong> Cartão de Crédito - Moedas caem em até 30 min.
                            </p>
 
                                  <!-- FORMAS DE PAGAMENTO -->
@@ -778,20 +823,76 @@ class Views{
                                      
                                      <div class="accordion" id="formasDePagamentoCollapse">
                                           
+                                          
+
+                                         
+
                                           <!-- FORMA DE PAGAMENTO -->
+                                          <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                              <h2 class="mb-0">
+                                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBoleto" aria-expanded="false" aria-controls="collapseBoleto">
+                                                  <div class="custom-control custom-switch">
+                                                    <input type="radio" id="customRadio23" name="customRadio" class="custom-control-input" checked>
+                                                    <label class="custom-control-label" for="customRadio23">PIX</label>
+                                                  </div>
+                                                </button>
+                                              </h2>
+                                            </div>
+                                            <div id="collapseBoleto" class="collapse show" aria-labelledby="headingThree" data-parent="#formasDePagamentoCollapse">
+                                              <div class="card-body formularios-dados-pagamento">
+                                                    
+                                                    <form id="formPayBoleto" method="post" action="javascript:void(0)" onsubmit="app.payBoleto(event)">
+
+                                                        <div class="row">
+                                                              <div class="col-12 form-group">
+                                                                 <label>CPF</label>
+                                                                 <input type="tel" id="pagtoBBNumeroCPF" name="pagtoBBNumeroCPF" class="form-control" placeholder="CPF do pagador">
+                                                              </div>
+                                                        </div>
+                                                        <div class="row">
+                                                              <div class="col-12">
+                                                                 <label>Nome</label>
+                                                                 <input type="text" id="pagtoBBNome" name="pagtoBBNome" class="form-control" placeholder="Nome completo do pagador">
+                                                              </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                                
+                                                                <div class="col-12">
+
+                                                                    <p id="areaStatusPagamentoBoleto">
+                                                                        <button type="submit" id="btnPayBoleto" class="btn btn-primary">
+                                                                            PAGAR COM PIX
+                                                                        </button>
+                                                                     </p>
+
+                                                                </div>
+
+                                                          </div>
+
+                                                    </form>
+
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- FORMA DE PAGAMENTO -->
+
+                                        <!-- FORMA DE PAGAMENTO -->
                                           <div class="card">
                                             <div class="card-header" id="headingOne">
                                               <h2 class="mb-0">
                                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseCartaoCredito" aria-expanded="true" aria-controls="collapseCartaoCredito">
                                                   <div class="custom-control custom-switch">
-                                                    <input type="radio" id="customRadio21" name="customRadio" class="custom-control-input" checked>
+                                                    <input type="radio" id="customRadio21" name="customRadio" class="custom-control-input">
                                                     <label class="custom-control-label" for="customRadio21">Cartão de crédito</label>
                                                   </div>
                                                 </button>
                                               </h2>
                                             </div>
 
-                                            <div id="collapseCartaoCredito" class="collapse show" aria-labelledby="headingOne" data-parent="#formasDePagamentoCollapse">
+                                            <div id="collapseCartaoCredito" class="collapse" aria-labelledby="headingOne" data-parent="#formasDePagamentoCollapse">
                                               <div class="card-body formularios-dados-pagamento">
                                                     
                                                     <form method="post" action="javascript:void(0)" onsubmit="app.payCartaoDeCredito(event)">
@@ -858,60 +959,6 @@ class Views{
                                             </div>
                                           </div>
                                           <!-- FORMA DE PAGAMENTO -->
-
-                                         
-
-                                          <!-- FORMA DE PAGAMENTO -->
-                                          <div class="card">
-                                            <div class="card-header" id="headingThree">
-                                              <h2 class="mb-0">
-                                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBoleto" aria-expanded="false" aria-controls="collapseBoleto">
-                                                  <div class="custom-control custom-switch">
-                                                    <input type="radio" id="customRadio23" name="customRadio" class="custom-control-input">
-                                                    <label class="custom-control-label" for="customRadio23">PIX</label>
-                                                  </div>
-                                                </button>
-                                              </h2>
-                                            </div>
-                                            <div id="collapseBoleto" class="collapse" aria-labelledby="headingThree" data-parent="#formasDePagamentoCollapse">
-                                              <div class="card-body formularios-dados-pagamento">
-                                                    
-                                                    <form id="formPayBoleto" method="post" action="javascript:void(0)" onsubmit="app.payBoleto(event)">
-
-                                                        <div class="row">
-                                                              <div class="col-12 form-group">
-                                                                 <label>CPF</label>
-                                                                 <input type="tel" id="pagtoBBNumeroCPF" name="pagtoBBNumeroCPF" class="form-control" placeholder="CPF do pagador">
-                                                              </div>
-                                                        </div>
-                                                        <div class="row">
-                                                              <div class="col-12">
-                                                                 <label>Nome</label>
-                                                                 <input type="text" id="pagtoBBNome" name="pagtoBBNome" class="form-control" placeholder="Nome completo do pagador">
-                                                              </div>
-                                                        </div>
-
-                                                        <div class="row">
-                                                                
-                                                                <div class="col-12">
-
-                                                                    <p id="areaStatusPagamentoBoleto">
-                                                                        <button type="submit" id="btnPayBoleto" class="btn btn-primary">
-                                                                            PAGAR COM PIX
-                                                                        </button>
-                                                                     </p>
-
-                                                                </div>
-
-                                                          </div>
-
-                                                    </form>
-
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <!-- FORMA DE PAGAMENTO -->
 
 
                                  </div>
@@ -1787,7 +1834,7 @@ class Views{
                                     e ganhe MOEDAS para desbloquear orçamentos!
                                   </p>
                                   <p>
-                                    Se as pessoas que você indicou, se cadastrarem, você ganha na hora até 100 chaves!!
+                                    Se as pessoas que você indicou, se cadastrarem, você ganha na hora até 100 MOEDAS!!
                                   </p>
 
                                   <div class="social">
@@ -2076,7 +2123,7 @@ class Views{
 
                      <div class="form-group link-apoio text-center">
                             <a href="javascript:void(0)" title="Versão do Aplicativo" style="padding-top:20px;font-size:13px;">
-                               Versão 1.2.4
+                               Versão 1.2.5
                             </a>
                           </div>
                      

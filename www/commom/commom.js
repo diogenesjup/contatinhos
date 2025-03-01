@@ -368,4 +368,52 @@ function copiarCodigoPix(){
 }
 
 
+// UPLOAD DE IMAGEM DE PERFIL
+function previewImagem(){
+
+        // Correção: Use [0] para acessar o elemento DOM e obter o arquivo
+        const file = jQuery("#foto_destaque")[0].files[0];
+          
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                //preview.src = e.target.result; // Mostrar preview
+                jQuery("#previewContainerId").html(`
+                                                      <div 
+                                                         class="foto-de-perfil-atual" id="previewFinal"
+                                                         style="background:url('assets/images/default916955d994a3b0c76e1ea87bd0d124a7.jpg') no-repeat center center;background-size:cover;"
+                                                      >
+                                                         &nbsp;
+                                                      </div>  
+                  
+                `);
+                jQuery("#previewContainerId #previewFinal").css(`background`,`url('${e.target.result}') #f2f2f2 no-repeat`);
+                jQuery("#previewContainerId #previewFinal").css(`background-size`,`cover`);
+                jQuery("#previewContainerId #previewFinal").css(`background-position`,`center center`);
+                jQuery("#previewContainerId").append(`
+          
+                  <p style="font-size:12px;text-align:center;">
+                    Preview da imagem que será enviada
+                  </p>
+      
+              `);
+              
+            }
+            reader.readAsDataURL(file); // Converte a imagem para base64 para pré-visualização
+        } else {
+            //preview.src = ''; // Caso não haja imagem
+        }
+
+        
+
+        const previewContainer = document.getElementById("previewContainerId");
+        //const preview = document.createElement('img');
+        //preview.style.maxWidth = '200px';
+        //preview.style.marginTop = '10px';
+        //previewContainer.appendChild(preview);
+
+}
+
+
+
 
