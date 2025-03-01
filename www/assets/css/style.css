@@ -609,6 +609,8 @@ section#content .view-3{
 .loop-novos-servicos .caixa-destaque-servicos h3 img{
     float: left;
     width: 64px;
+    height: 64px;
+    object-fit: cover;
     margin-right: 14px;
     margin-bottom: 8px;
     margin-top: -4px;
