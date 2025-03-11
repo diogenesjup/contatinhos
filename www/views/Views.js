@@ -51,7 +51,7 @@ class Views{
                               <input class="form-check-input" type="radio" name="tipoPerfil" id="tipoServicoClienteEmpresa" value="cliente">
                               <label class="form-check-label" for="tipoServicoClienteEmpresa">
                                 <span style="position: absolute;display: block;float: none;width: 42px;height: 42px;border-radius: 100%;margin-right: 10px;margin-top: 1px;text-align: center;left:10px;">
-                                    <img src="assets/images/EMPRESA.png" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Sou CLIENTE" />
+                                    <img src="assets/images/empresa2.png" style="position: absolute;display: block;left: 0px;top: 1px;width: 96%;" alt="Sou CLIENTE" />
                                 </span> Como <strong>EMPRESA,</strong><br> preciso de um profissional
                               </label>
                            </div>
@@ -698,7 +698,7 @@ class Views{
                                                       id="foto_destaque" 
                                                       accept="image/*"
                                                       onchange="previewImagem()" 
-                                                      required 
+                                                       
                                                    />
                                              </div>
 
@@ -2123,7 +2123,7 @@ class Views{
 
                      <div class="form-group link-apoio text-center">
                             <a href="javascript:void(0)" title="Versão do Aplicativo" style="padding-top:20px;font-size:13px;">
-                               Versão 1.2.6
+                               Versão 1.2.7
                             </a>
                           </div>
                      

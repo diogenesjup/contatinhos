@@ -446,6 +446,8 @@ class Models{
         $("#btnEditar").html("Processando...");
         $(".form-control").attr("readonly","true");
 
+      
+
         const fileInput    = document.getElementById("foto_destaque");
         const file         = fileInput.files[0];
         var   imagemPerfil = "N/A";
