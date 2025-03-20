@@ -1,6 +1,6 @@
 var app = new App(1, 
 				 "Contatinhos", 
-				 "1.2.6", 
+				 "1.2.8", 
 				 "HIBRIDO",
 				 "HOMOLOGACAO",
 				 "F9803B518FD8E8E0CD0E7E51F164B7463BDFBC5337DB8603A7B78FFAD76FDFA8",

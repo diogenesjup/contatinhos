@@ -963,8 +963,11 @@ carregarDetalheAtendimento(idAnuncio,acao){
 
               let celularLimpo = dados.orcamentos[0].celular.replace(/\D/g, '');
 
+              //$("#actionLigacao").attr("href",`tel:${celularLimpo}`);
+              //$("#actionWhatsApp").attr("href",`https://api.whatsapp.com/send?l=pt_BR&phone=55${celularLimpo}`);
+
               $("#actionLigacao").attr("href",`tel:${celularLimpo}`);
-              $("#actionWhatsApp").attr("href",`https://api.whatsapp.com/send?l=pt_BR&phone=55${celularLimpo}`);
+              $("#actionWhatsApp").attr("onclick",`abrirUrl('https://api.whatsapp.com/send?l=pt_BR&phone=55${celularLimpo}')`);
 
               if(dados.orcamentos[0].imagem_perfil){
                  $(".header-autor h3 img").attr("src",dados.orcamentos[0].imagem_perfil);
@@ -973,6 +976,84 @@ carregarDetalheAtendimento(idAnuncio,acao){
             }else{
               
               console.log("SEM SUCESSO carregarDetalheAtendimento()");
+              console.log(JSON.parse(xhr.responseText));
+              aviso("Oops! Algo deu errado.","Nossos servidores estão passando por dificuldades, tente novamente em alguns minutos.");
+
+            }
+
+          }
+      }; // FINAL AJAX VANILLA
+
+      /* EXECUTA */
+      xhr.send(params);
+
+}
+
+/**
+*  ------------------------------------------------------------------------------------------------
+*
+*
+*   BANNERS ADS
+*
+*
+*  ------------------------------------------------------------------------------------------------
+*/
+bannersAds(){
+
+        // CONFIGURAÇÕES AJAX VANILLA
+        let xhr = new XMLHttpRequest();
+
+        var idUsuario = localStorage.getItem("idUsuario");
+
+        let temp = 0;
+        let resultado = 0;
+        var checked = "checked";
+
+        xhr.open('POST', app.urlApi+'get-banners-ads',true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        var params = 'idUsuario='+idUsuario+ 
+                    "&token="+app.token;
+        
+        // INICIO AJAX VANILLA
+        xhr.onreadystatechange = () => {
+
+          if(xhr.readyState == 4) {
+
+            if(xhr.status == 200) {
+
+              console.log("BANNERS DISPONÍVEIS");
+
+              console.log(JSON.parse(xhr.responseText));
+              
+              var dados = JSON.parse(xhr.responseText);
+
+              console.log("COMECANDO A IMPRIMIR OS PACOTES NA TELA:");
+
+              $("#area_banner_ads").html(`
+
+                  ${dados.banners.map((n) => {
+
+                              return `
+                                  
+                                <!-- BANNER -->
+                                <div class="banner">
+                                    <a href="#" onclick="abrirUrl('${n.link_de_destino_ao_clicar_no_banner}')">
+                                        <img src="${n.imagem_destaque_banner}" alt="" />
+                                    </a>
+                                </div>
+                                <!-- PACOTE -->
+
+                              `
+
+                      }).join('')}
+
+              `);
+              
+
+            }else{
+              
+              console.log("SEM SUCESSO bannersAds()");
               console.log(JSON.parse(xhr.responseText));
               aviso("Oops! Algo deu errado.","Nossos servidores estão passando por dificuldades, tente novamente em alguns minutos.");
 

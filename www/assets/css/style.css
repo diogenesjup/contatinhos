@@ -2326,3 +2326,17 @@ p.apoio-servico{
     display: block;
     margin-bottom: 16px;
 }
+
+
+.banners-ads p{
+  font-size: 12px;
+  text-decoration: underline;
+  color: #747474;
+}
+
+.banners-ads img{
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}

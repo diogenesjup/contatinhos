@@ -64,6 +64,11 @@ class Views{
 
                      </form>
 
+                     <div class="banners-ads">
+                        <p>Publicidade</p>
+                        <div id="area_banner_ads"></div>
+                     </div>
+
 
                   </div>
                </div>
@@ -76,6 +81,8 @@ class Views{
             //$("header .menu-bar-toggle").fadeIn(500);
 
             $("footer").fadeOut();
+
+            app.models.bannersAds();
         
     }
 
@@ -111,7 +118,7 @@ class Views{
                      <!-- BUSCA PRINCIPAL -->
 
                      <h2 id="fraseDeAbertura">
-                       Receba orçamentos de profissionais <b>qualificados</b> próximos a você!
+                       Receba propostas de profissionais <b>qualificados</b> próximos a você!
                      </h2>
 
                      <nav>
@@ -1039,7 +1046,7 @@ class Views{
                                  </h3>
                                  -->
 
-                                   <p style="text-align:center">Suas Keys serão liberadas meditante confirmação do pagamento do PIX.</p>
+                                   <p style="text-align:center">Suas moedas serão liberadas meditante confirmação do pagamento do PIX.</p>
 
                                    <p>
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=350x350&data=${encodedPayload}" style="width: 80%;height: auto;margin: 20px;border-radius: 8px;" /> 
@@ -2123,7 +2130,7 @@ class Views{
 
                      <div class="form-group link-apoio text-center">
                             <a href="javascript:void(0)" title="Versão do Aplicativo" style="padding-top:20px;font-size:13px;">
-                               Versão 1.2.7
+                               Versão 1.2.8
                             </a>
                           </div>
                      
