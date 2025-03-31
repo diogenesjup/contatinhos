@@ -21,13 +21,13 @@ class App {
         }
         if(ambiente=="PRODUCAO"){
 
-            this.urlDom = "https://resolvaja.tec.br/app/www/";
-            this.urlApi = "https://resolvaja.tec.br/apiservicekeys/";
-            this.urlCdn = "https://resolvaja.tec.br/cdn/";
+            this.urlDom = "https://contatinhos.com.br/app/www/";
+            this.urlApi = "https://contatinhos.com.br/apiservicekeys/";
+            this.urlCdn = "https://contatinhos.com.br/cdn/";
 
         }
 
-        this.urlApiPagto = "https://servidorseguro.cloud/contatinhos/";
+        this.urlApiPagto = "https://contatinhos.com.br/";
 
         this.token = token;
         this.tokenSms = tokenSms;
